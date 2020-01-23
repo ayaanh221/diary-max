@@ -1,16 +1,132 @@
-<html>
-<head>
+{% extends 'base.html'%} 
+{% block content %} 
+ 
+     {% for task in tasks%} 
+     {{task.task_name}} 
+     {{task.category_name}}
+     {{task.new_entry}}
+     {{entry_description}}
+     {{is_urgent}} 
+     {{task.due_date}} 
+     {% endfor %}
+     
+     
+     <body id="home" class="scrollspy">
+     <!--navbar -->
+ <div class="navbar-fixed">
+  <nav class="teal">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">MY COOK BOOK</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="home">HOME</a>
+           </li>
+            <li>
+            <a href="search">SEARCH</a>
+           </li>
+            <li>
+            <a href="recipe">RECIPE</a>
+           </li>
+            <li>
+            <a href="contact">CONTACT</a>
+           </li>
+        </ul>   
     
-  
-</head>
-<body>
-    {% for task in tasks %}
-         {{task.task_name}}
-         {{task.category_name}}
-         {{task.new_entry}}
-         {{entry_description}}
-         {{is_urgent}}
-         {{task.due_date}}
-    {% endfor %}
+      </div>
+    </div>
+  </nav>
+ </div> 
+ 
+ <ul class="sidenav" id="mobile-nav">
+          <li>
+            <a href="home">HOME</a>
+           </li>
+          <li>
+            <a href="search">SEARCH</a>
+           </li>
+             <li>
+            <a href="recipe">RECIPES</a>
+           </li>
+            <li>
+            <a href="contact">CONTACT</a>
+           </li>
+        </ul>
+        <!-- secton slider -->
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/food-1932466_960_720.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://www.lioncapital.com/images/uploads/brand/images/95/brand_aryzta_580x326__large.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+      <!--search section-->
+      <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+        <div class="container">
+     <div class="row">
+       <div class="col s12">
+         <h3>Search Recipes</h3>
+         <div class="input-field">
+           <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Tomato soup, Crepe, etc...">
+         </div>
+       </div>
+     </div>
+        </div>
+      </section>
+      
+      <!--section: icon boxes-->
+      <section class="section section-icons grey lighten-4 center">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m4">
+          <a href="add_task">    <div class="card-panel">
+                <i class="material-icons large teal-text">create</i>
+                <h4>Create Recipes</h4>
+                <P>Click To Create Your Own Recipe Now!</P>
+              </div></a>
+            </div>
+             <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large teal-text">storage</i>
+                <h4>Recipes</h4>
+                <P>Click View Your Recipes</P>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large teal-text">event</i>
+                <h4>Plan</h4>
+                <P>Plan Your Next Meal</P>
+              </div>
+            </div>
+          </div>
+           
+        </div>
+        
+      </section>
+      <!--make a recipe-->
+    
 </body>
-</html>
+{% endblock %}
