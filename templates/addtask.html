@@ -5,7 +5,7 @@
 
 <h3>Add Recipe</h3>
 <div class="row">
-    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
+    <form action="{{ url_for('insert_task')}}" method="POST"  class="col s12">
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
@@ -69,10 +69,10 @@
   <div class="switch">
       <p>vegiterian</p>
     <label>
-      off
+      no
       <input type="checkbox">
       <span class="lever"></span>
-   on
+   yes
     </label>
   </div>
   </div>
@@ -88,6 +88,4 @@
     
 
 {% endblock %}
-
-
 
