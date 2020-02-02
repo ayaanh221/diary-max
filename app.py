@@ -22,6 +22,11 @@ def add_task():
     return render_template('addtask.html',
                            categories=mongo.db.categories.find())
 
+                           
+@app.route('/task_recipe')
+def recipes():
+    return render_template("recipes.html", task=mongo.db.tasks.find())
+    
 
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
@@ -30,10 +35,28 @@ def insert_task():
     return redirect(url_for('get_tasks'))
 
 
-@app.route('/task_recipe')
-def recipes():
-    return render_template("recipes.html", task=mongo.db.tasks.find())
+@app.route('/edit_task/<task_id>')
+def edit_task(task_id):
+    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    all_categories =  mongo.db.categories.find()
+    return render_template('edittask.html', task=the_task,
+                           categories=all_categories)
+
    
+   
+@app.route('/update_task/<get_tasks>', methods=["POST"])
+def update_task(task_id):
+    tasks = mongo.db.tasks
+    tasks.update( {'_id': ObjectId(task_id)},
+    {
+       'recipe_name':request.form.get('task_name'),
+        'photo_Link':request.form.get('category_name'),
+        'cooking_time': request.form.get('task_description'),
+        'ingredients': request.form.get('task_description'),
+        'due_date': request.form.get('due_date'),
+        'vegetarian':request.form.get('switch')
+    })
+    return redirect(url_for('get_tasks'))
 
 
 if __name__ == '__main__':
