@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
-    return render_template("tasks.html", task=mongo.db.tasks.find())
+    return render_template("tasks.html", tasks=mongo.db.tasks.find())
 
 
 @app.route('/add_task')
@@ -25,7 +25,7 @@ def add_task():
                            
 @app.route('/task_recipe')
 def recipes():
-    return render_template("recipes.html", task=mongo.db.tasks.find())
+    return render_template("recipes.html", tasks=mongo.db.tasks.find())
     
 
 @app.route('/insert_task', methods=['POST'])
