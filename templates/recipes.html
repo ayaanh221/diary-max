@@ -3,17 +3,28 @@
     <h1>My Recipes</h1>
     <p>Recipe count: {{ recipe_count }}</p>
     <ul class="collapsible">
+         {%for task in tasks%} 
+     
+             
+  
+  
+     
      {% for recipe in tasks%} 
         <li>
-        <div class="collapsible-header"><i class="material-icons">expand_more</i>{{recipe.task_name}}
+       {{task.task_name}} <div class="collapsible-header"><i class="material-icons">expand_more</i>{{recipe.task_name}}
         </div>
-        <div class="collapsible-body">
-     
-            <span>  {{entry_description}}</span>
+        {{task.category_name}}   <div class="collapsible-body">
+        {{task.new_entry}}
+     {{entry_description}}
+     {{is_urgent}} 
+     {{task.due_date}} 
+            
             <br><br>
-            {% if recipe.image_url %}
-            <img class="materialboxed" src="{{recipe.image_url }}" alt="{{ recipe.image_filename }}">
+           
+           {% if recipe.image_url %} 
+           <img class="materialboxed" src="{{recipe.image_url }}" alt="{{ recipe.image_filename }}">
             {% endif %}
+            {% endfor%}
         </div>
         </li>
     {% endfor %}
