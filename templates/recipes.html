@@ -2,32 +2,24 @@
 <div class="row">
     <h1>My Recipes</h1>
     <p>Recipe count: {{ recipe_count }}</p>
-    <ul class="collapsible">
-         {%for task in tasks%} 
-     
-             
-  
-  
-     
+ 
+   
      {% for recipe in tasks%} 
-        <li>
-       {{task.task_name}} <div class="collapsible-header"><i class="material-icons">expand_more</i>{{recipe.task_name}}
-        </div>
-        {{task.category_name}}   <div class="collapsible-body">
-        {{task.new_entry}}
-     {{entry_description}}
-     {{is_urgent}} 
-     {{task.due_date}} 
-            
-            <br><br>
-           
-           {% if recipe.image_url %} 
-           <img class="materialboxed" src="{{recipe.image_url }}" alt="{{ recipe.image_filename }}">
-            {% endif %}
-            {% endfor%}
-        </div>
-        </li>
-    {% endfor %}
+   <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src= "">
+    </div>
+    <div class="card-content">
+   {{recipe_name}} <span class="card-title activator grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+       {{recipe_name}} <span class="card-title grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+  {% endfor%}
+         
     </ul>
     {% if prev_url %}
     <a href="{{ prev_url }}">Previous page of recipes</a>

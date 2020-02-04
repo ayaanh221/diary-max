@@ -49,12 +49,12 @@ def update_task(task_id):
     tasks = mongo.db.tasks
     tasks.update( {'_id': ObjectId(task_id)},
     {
-       'recipe_name':request.form.get('task_name'),
-        'photo_Link':request.form.get('category_name'),
-        'cooking_time': request.form.get('task_description'),
-        'ingredients': request.form.get('task_description'),
+       'recipe_name':request.form.get('recipe_name'),
+        'photo_Link':request.form.get('photo_Link'),
+        'cooking_time': request.form.get('cooking_time'),
+        'ingredients': request.form.get('ingredients'),
         'due_date': request.form.get('due_date'),
-        'vegetarian':request.form.get('switch')
+        'vegetarian':request.form.get('vegetarian')
     })
     return redirect(url_for('get_tasks'))
 
