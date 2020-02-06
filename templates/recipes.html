@@ -5,19 +5,53 @@
  
    
      {% for recipe in tasks%} 
-   <div class="card">
+
+<div class="col s12 m4">
+  <div class="card">
+ <!--image-->  
+ {% if recipe.photo_link %}
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src= "">
+     <img class="activator" src="{{recipe.photo_link}}">
     </div>
+     {% endif %}
+   
+   
+ <!--card content-->
     <div class="card-content">
-   {{recipe_name}} <span class="card-title activator grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+     {{recipe_name}}    <span class="card-title activator grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">more_vert</i></span> 
+   <i class="material-icons">
+delete
+</i> 
+
     </div>
+   <!--card reveal-->
     <div class="card-reveal">
-       {{recipe_name}} <span class="card-title grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+     {{recipe_name}}  <span class="card-title grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">close</i></span>
+    <!--Ingredient-->  
+      <h4>Ingredient</h4>
+      <ul class="b">
+  <li>{{recipe.ingredients}}</li>
+  <li></li>
+  <li></li>
+</ul>
+<!--method-->
+ <h4>How to make Recipe</h4>
+ <p>{{recipe.method}}</p>
+  <!--due_date-->
+  <h4>when would you cook it?</h4>
+  <p>{{recipe.due_date}}</p>
+  <!--vegetarian-->
+  <h4>Is your recipe suitible for vegetarians?</h4>
+  <p>{{recipe.vegetarian}}</p>
+  <!--cooking_time-->
+  <h4>How Long Would it take you to make this recipe?</h4>
+  <p>{{recipe.cooking_time}}</p>
     </div>
+
+
+
   </div>
+           </div> 
   {% endfor%}
          
     </ul>

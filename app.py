@@ -19,6 +19,7 @@ def get_tasks():
 
 @app.route('/add_task')
 def add_task():
+    
     return render_template('addtask.html',
                            categories=mongo.db.categories.find())
 
@@ -30,9 +31,14 @@ def recipes():
 
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
+   
     tasks = mongo.db.tasks
     tasks.insert_one(request.form.to_dict())
     return redirect(url_for('get_tasks'))
+    
+    
+    
+
 
 
 @app.route('/edit_task/<task_id>')
@@ -50,9 +56,10 @@ def update_task(task_id):
     tasks.update( {'_id': ObjectId(task_id)},
     {
        'recipe_name':request.form.get('recipe_name'),
-        'photo_Link':request.form.get('photo_Link'),
+        'photo_link':request.form.get('photo_link'),
         'cooking_time': request.form.get('cooking_time'),
         'ingredients': request.form.get('ingredients'),
+        'method': request.form.get('method'),
         'due_date': request.form.get('due_date'),
         'vegetarian':request.form.get('vegetarian')
     })
@@ -63,3 +70,4 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
+            

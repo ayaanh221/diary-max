@@ -15,58 +15,80 @@
                     
                 </div>
             </div>
-            <div class="input-field col s12">
+<!--Recipe Name-->
+            <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
                 <input id="recipe_name" name="recipe_name" type="text">
                 <label for="icon_prefix">Recipe Name</label>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="input-field col s12">
+<!--Ingredient-->
+         <div class="row">
+          <div class="input-field col s10">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
+                <textarea name="ingredients" id="ingredients" class="materialize-textarea" > </textarea>  
                 <label for="icon_telephone">Ingredient</label>
-            </div>
+               </div>   
+
+            
         </div>
         <div class="row">
-            <div class="input-field col s12">
+       
+<!--How to make Recipe-->
+        <div class="row">
+            <div class="input-field col s10">
                 <i class="material-icons prefix">local_dining</i>
-                <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
+                <textarea name="method" id="method" class="materialize-textarea"> </textarea>
+                
                 <label for="icon_telephone">How to make Recipe</label>
             </div>
         </div>
-        
+<!--photo-->
          <div class="row">
-            <div class="input-field col s12">
-             <form action="photo_link">
+        
+            <div class="input-field col s6" action="photo_link">
+              
     <div class="file-field input-field">
       <div class="btn">
         <span>File</span>
-        <input type="file" multiple>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div><input type="file" multiple> 
+      <div class="file-path-wrapper"> 
+                 <input class="file-path validate" type="text" placeholder="Upload one or more files">
+
+        
       </div>
     </div>
  
             </div>
         </div>
-        
+        <!--datepicker-->
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s3">
                 <i class="material-icons prefix">today</i>
                 <input id="due_date" name="due_date" type="text" class="datepicker">
                 <label for="icon_prefix">Due Date</label>
             </div>
         </div>
+        
+        
+    <!--cooking_time-->
+     <div class="row">
+            <div class="input-field col s5">
+                <i class="material-icons prefix">alarm</i>
+                <textarea name="cooking_time" id="cooking_time" class="materialize-textarea"> </textarea>
+                
+                <label for="icon_telephone">How long would it take you to make this recipe?</label>
+            </div>
+        </div>
+    
         <!-- Switch -->
 
-  <div class="switch">
-      <p>vegiterian</p>
+  <div class="switch col s6" >
+      <p>Is It Suitible For Vegetarians?</p>
+     
     <label>
       no
-      <input type="checkbox">
+       <input type="checkbox" name="vegetarian" class="vegiterian">
       <span class="lever"></span>
    yes
     </label>
