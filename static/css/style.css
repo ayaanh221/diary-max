@@ -9,3 +9,8 @@
 ul.b {
   list-style-type: square;
 }
+
+.photo_link{
+  width:500px;
+  height:333px;
+}

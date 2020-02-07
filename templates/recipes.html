@@ -7,15 +7,17 @@
      {% for recipe in tasks%} 
 
 <div class="col s12 m4">
-  <div class="card">
+  <div class="card col s7">
  <!--image-->  
- {% if recipe.photo_link %}
-    <div class="card-image waves-effect waves-block waves-light">
+ 
+    
+     {% if recipe.photo_link %}
+    <div class="card-image waves-effect waves-block waves-light ">
      <img class="activator" src="{{recipe.photo_link}}">
     </div>
      {% endif %}
    
-   
+ 
  <!--card content-->
     <div class="card-content">
      {{recipe_name}}    <span class="card-title activator grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">more_vert</i></span> 
@@ -46,6 +48,7 @@ delete
   <!--cooking_time-->
   <h4>How Long Would it take you to make this recipe?</h4>
   <p>{{recipe.cooking_time}}</p>
+  
     </div>
 
 
