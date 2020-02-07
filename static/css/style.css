@@ -6,11 +6,13 @@
 }
 
 
-ul.b {
-  list-style-type: square;
-}
 
-.photo_link{
-  width:500px;
-  height:333px;
+
+.btn_small{
+  height: 24px;
+  width:60px;
+  line-height: 24px;
+  margin: 5px 5px;
+  padding: 0 0.5em;
+  
 }

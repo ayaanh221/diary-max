@@ -25,7 +25,7 @@ def add_task():
 
                            
 @app.route('/task_recipe')
-def recipes():
+def task_recipe():
     return render_template("recipes.html", tasks=mongo.db.tasks.find())
     
 

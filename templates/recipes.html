@@ -1,60 +1,66 @@
 {% extends 'base.html'%} {% block content %}
 <div class="row">
     <h1>My Recipes</h1>
-    <p>Recipe count: {{ recipe_count }}</p>
- 
+    
    
      {% for recipe in tasks%} 
 
 <div class="col s12 m4">
-  <div class="card col s7">
+  <div class="card col s12">
  <!--image-->  
  
     
      {% if recipe.photo_link %}
     <div class="card-image waves-effect waves-block waves-light ">
-     <img class="activator" src="{{recipe.photo_link}}">
+     <img class="activator col s12 " src="{{recipe.photo_link}} ">
     </div>
      {% endif %}
    
  
  <!--card content-->
     <div class="card-content">
-     {{recipe_name}}    <span class="card-title activator grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">more_vert</i></span> 
-   <i class="material-icons">
-delete
-</i> 
+     {{recipe_name}}    <span class="card-title activator grey-text text-darken-4"><h4>{{recipe.recipe_name}}</h4><i class="material-icons right">more_vert</i></span> 
+   
 
     </div>
    <!--card reveal-->
-    <div class="card-reveal">
-     {{recipe_name}}  <span class="card-title grey-text text-darken-4">{{recipe.recipe_name}}<i class="material-icons right">close</i></span>
+    <div class="card-reveal"> 
+     <!--edit/ delete button-->
+    <div class="col 12">
+    <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn-small  ">EDIT</a>
+   
+    <a class="waves-effect waves-light btn-small">DELETE</a>
+   </div>
+     {{recipe_name}}  <span class="card-title grey-text text-darken-4"><h1>{{recipe.recipe_name}}</h1><i class="material-icons right">close</i></span>
+    
+  
     <!--Ingredient-->  
-      <h4>Ingredient</h4>
+      <h5>INGREDIENTS</h5>
       <ul class="b">
   <li>{{recipe.ingredients}}</li>
   <li></li>
   <li></li>
 </ul>
 <!--method-->
- <h4>How to make Recipe</h4>
+ <h5>HOW TO MAKE THE RECIPE.</h5>
  <p>{{recipe.method}}</p>
   <!--due_date-->
-  <h4>when would you cook it?</h4>
-  <p>{{recipe.due_date}}</p>
+  <h5>WHEN WOULD YOU COOK IT?</h5>
+   <p>{{recipe.due_date}}</p>
   <!--vegetarian-->
-  <h4>Is your recipe suitible for vegetarians?</h4>
-  <p>{{recipe.vegetarian}}</p>
+  <h5>IS IT SUITABLE FOR VEGETARIAN'S?</h5>
+   <p>{{recipe.vegetarian}}</p> 
   <!--cooking_time-->
-  <h4>How Long Would it take you to make this recipe?</h4>
-  <p>{{recipe.cooking_time}}</p>
+  <h5>HOW LONG WOULD IT TAKE YOU TO MAKE THIS RECIPE?</h5>
+   <p>{{recipe.cooking_time}}</p>
   
     </div>
 
 
 
   </div>
-           </div> 
+  </div>
+            
   {% endfor%}
          
     </ul>
@@ -66,3 +72,5 @@ delete
     {% endif %}
 </div>
 {% endblock %}
+
+
