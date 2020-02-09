@@ -95,14 +95,16 @@
         <div class="container">
           <div class="row">
             <div class="col s12 m4">
-          <a href="add_task">    <div class="card-panel">
+         
+          <a href={{ url_for('add_task') }}><div class="card-panel">
                 <i class="material-icons large teal-text">create</i>
                 <h4>Create Recipes</h4>
                 <P>Click To Create Your Own Recipe Now!</P>
               </div></a>
             </div>
              <div class="col s12 m4">
-              <a href="task_recipe">   <div class="card-panel">
+                 <a href={{ url_for('task_recipe') }}>  <div class="card-panel">
+             
                 <i class="material-icons large teal-text">storage</i>
                 <h4>Recipes</h4>
                 <P>Click View Your Recipes</P>

@@ -2,7 +2,6 @@
 {% extends 'base.html' %} {% block content %}
 
 
-<section id="edit_task">
 <h3>EDIT TASK</h3>
 <div class="row">
     <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
@@ -79,13 +78,14 @@
 
   <div class="switch col s6" >
       <p>Is It Suitible For Vegetarians?</p>
-     
+     no
     <label>
       no
        <input type="checkbox" name="vegetarian" class="vegiterian">
-      <span class="lever"></span>
+      <span class="lever"> no</span>
    yes
     </label>
+    
   </div>
   </div>
   
@@ -96,6 +96,6 @@
         </div>
     </form>
 </div>
-</section>
+
 
 {% endblock %}
