@@ -5,7 +5,7 @@
    
      
      
-     <body id="home" class="scrollspy">
+     <div id="home" class="scrollspy">
      <!--navbar -->
  <div class="navbar-fixed">
   <nav class="teal">
@@ -16,18 +16,8 @@
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="home">HOME</a>
-           </li>
-            <li>
-            <a href="search">SEARCH</a>
-           </li>
-            <li>
-            <a href="recipe">RECIPE</a>
-           </li>
-            <li>
-            <a href="contact">CONTACT</a>
-           </li>
+         
+          
         </ul>   
     
       </div>
@@ -44,7 +34,7 @@
            </li>
              <li>
             <a href="recipe">RECIPES</a>
-           </li>
+           <a href="recipe">RECIPE</a>/li>
             <li>
             <a href="contact">CONTACT</a>
            </li>
@@ -94,7 +84,7 @@
       <section class="section section-icons grey lighten-4 center">
         <div class="container">
           <div class="row">
-            <div class="col s12 m4">
+            <div class="col s12 m6">
          
           <a href={{ url_for('add_task') }}><div class="card-panel">
                 <i class="material-icons large teal-text">create</i>
@@ -102,7 +92,7 @@
                 <P>Click To Create Your Own Recipe Now!</P>
               </div></a>
             </div>
-             <div class="col s12 m4">
+             <div class="col s12 m6">
                  <a href={{ url_for('task_recipe') }}>  <div class="card-panel">
              
                 <i class="material-icons large teal-text">storage</i>
@@ -110,13 +100,7 @@
                 <P>Click View Your Recipes</P>
               </div></a>
             </div>
-            <div class="col s12 m4">
-              <div class="card-panel">
-                <i class="material-icons large teal-text">event</i>
-                <h4>Plan</h4>
-                <P>Plan Your Next Meal</P>
-              </div>
-            </div>
+          
           </div>
            
         </div>
@@ -124,5 +108,5 @@
       </section>
       <!--make a recipe-->
     
-</body>
+</div>
 {% endblock %}
