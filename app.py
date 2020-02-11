@@ -41,9 +41,9 @@ def insert_task():
 
 
 
-@app.route('/edit_task/<task_id>')
-def edit_task(task_id):
-    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+@app.route('/edit_task/<recipe_id>')
+def edit_task(recipe_id):
+    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('edittask.html', task=the_task,
                            categories=all_categories)
@@ -51,9 +51,9 @@ def edit_task(task_id):
    
    
 @app.route('/update_task/<get_tasks>', methods=["POST"])
-def update_task(task_id):
+def update_task(recipe_id):
     tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
+    tasks.update( {'_id': ObjectId(recipe_id)},
     {
        'recipe_name':request.form.get('recipe_name'),
         'photo_link':request.form.get('photo_link'),
@@ -67,8 +67,9 @@ def update_task(task_id):
 
 @app.route('/delete_task/<recipe_id>')
 def delete_task(recipe_id):
-    mongo.db.tasks.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_tasks'))
+ print(recipe_id, '===debug====')   
+ mongo.db.tasks.remove({'_id': ObjectId(recipe_id)})
+ return redirect(url_for('get_tasks'))
     
     
 if __name__ == '__main__':
