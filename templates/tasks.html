@@ -11,12 +11,21 @@
   <nav class="teal">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">MY COOK </a>
-        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+       <a href="{{ url_for('get_tasks') }}" class="brand-logo">MY COOK </a>
+        <a href="{{ url_for('get_tasks') }}" data-target="mobile-nav" class="sidenav-trigger">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
          
+          <li>
+            <a href={{ url_for('get_tasks') }}>HOME</a>
+           </li>
+          <li>
+            <a href={{ url_for('add_task') }}> CREAT RECIPES</a>
+           </li>
+             <li>
+              <a href={{ url_for('task_recipe') }}>RECIPES</a>
+          </li>
           
         </ul>   
     
@@ -27,13 +36,13 @@
  
  <ul class="sidenav" id="mobile-nav">
           <li>
-            <a href="home">HOME</a>
+           <a href={{ url_for('get_tasks') }}>HOME</a>
            </li>
           <li>
-            <a href="search"> CREAT RECIPES</a>
+            <a href={{ url_for('add_task') }}> ADD RECIPES</a>
            </li>
              <li>
-            <a href="recipe">RECIPES</a>
+           <a href={{ url_for('task_recipe') }}> MY RECIPES</a>
           </li>
           
         </ul>

@@ -1,7 +1,48 @@
   
   
 {% extends 'base.html' %} {% block content %}
-
+<!--navbar-->
+ <div class="navbar-fixed">
+  <nav class="teal">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">MY COOK </a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+         
+          <li>
+            <a href={{ url_for('get_tasks') }}>HOME</a>
+           </li>
+          <li>
+            <a href={{ url_for('add_task') }}> CREAT RECIPES</a>
+           </li>
+             <li>
+              <a href={{ url_for('task_recipe') }}>RECIPES</a>
+          </li>
+          
+        </ul>   
+    
+      </div>
+    </div>
+  </nav>
+ </div> 
+ 
+ <ul class="sidenav" id="mobile-nav">
+          <li>
+           <a href={{ url_for('get_tasks') }}>HOME</a>
+           </li>
+          <li>
+            <a href={{ url_for('add_task') }}> ADD RECIPES</a>
+           </li>
+             <li>
+           <a href={{ url_for('task_recipe') }}> MY RECIPES</a>
+          </li>
+          
+        </ul>
+        
+<!--content-->
 <section id="add-task">
     
 

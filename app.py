@@ -43,9 +43,9 @@ def insert_task():
 
 @app.route('/edit_task/<recipe_id>')
 def edit_task(recipe_id):
-    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    the_recipe=  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
     all_categories =  mongo.db.categories.find()
-    return render_template('edittask.html', task=the_task,
+    return render_template('edittask.html',  task=the_recipe,
                            categories=all_categories)
 
    

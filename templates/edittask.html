@@ -1,10 +1,49 @@
 
 {% extends 'base.html' %} {% block content %}
-
-
+<!--navbar-->
+ <div class="navbar-fixed">
+  <nav class="teal">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">MY COOK </a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+         
+          <li>
+            <a href={{ url_for('get_tasks') }}>HOME</a>
+           </li>
+          <li>
+            <a href={{ url_for('add_task') }}> CREAT RECIPES</a>
+           </li>
+             <li>
+              <a href={{ url_for('task_recipe') }}>RECIPES</a>
+          </li>
+          
+        </ul>   
+    
+      </div>
+    </div>
+  </nav>
+ </div> 
+ 
+ <ul class="sidenav" id="mobile-nav">
+          <li>
+           <a href={{ url_for('get_tasks') }}>HOME</a>
+           </li>
+          <li>
+            <a href={{ url_for('add_task') }}> ADD RECIPES</a>
+           </li>
+             <li>
+           <a href={{ url_for('task_recipe') }}> MY RECIPES</a>
+          </li>
+          
+        </ul>
+<!--edit task-->
 <h3>EDIT TASK</h3>
 <div class="row">
-    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
+    <form action="{{ url_for('insert_task', task_id=the_recipe) }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
@@ -90,7 +129,7 @@
   </div>
   
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit"  name="serialNumber" href="templates/recipes.html" onclick="M.toast({html: 'New Recipe Added!'})">Add Recipe
+            <button class="btn waves-effect waves-light" type="the_recip"  name="serialNumber" href="templates/recipes.html" onclick="M.toast({html: 'EDITED SUCCESFULLY!'})">Edit Recipe
                 <i class="material-icons right">send</i>
              </button>
         </div>
