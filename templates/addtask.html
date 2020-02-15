@@ -48,7 +48,7 @@
 
 <h3>Add Recipe</h3>
 <div class="row">
-    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
+    <form action="{{ url_for('edit_task, task_id=the_recipe') }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
