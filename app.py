@@ -11,18 +11,23 @@ app.config["MONGO_URI"]= 'mongodb+srv://ayaanh221:missayaan221@myfirstcluster-lj
 mongo = PyMongo(app)
 
 
+
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
     return render_template("tasks.html", tasks=mongo.db.tasks.find())
 
 
+
+
+
+
+
 @app.route('/add_task')
 def add_task():
-    
-    return render_template('addtask.html',
-                           categories=mongo.db.categories.find())
-
+  
+    return render_template('addtask.html', 
+                           categories=mongo.db.categories.find())         
                            
 @app.route('/task_recipe')
 def task_recipe():
@@ -31,12 +36,9 @@ def task_recipe():
 
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
-   
-    tasks = mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
-    
-    
+     tasks = mongo.db.tasks
+     tasks.insert_one(request.form.to_dict())
+     return redirect(url_for('get_tasks'))
     
 
 
@@ -50,7 +52,7 @@ def edit_task(recipe_id):
 
    
    
-@app.route('/update_task/<get_tasks>', methods=["POST"])
+@app.route('/update_task/<recipe_id>', methods=["POST"])
 def update_task(recipe_id):
     tasks = mongo.db.tasks
     tasks.update( {'_id': ObjectId(recipe_id)},
