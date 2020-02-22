@@ -6,6 +6,7 @@ My project is an online cookbook where you can store recipes that you have creat
 [demo]( https://ayaanh221.github.io/diary-max/)
 ## UX
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+[WIREFRAMES WOULD BE FOUND HERE]( https://balsamiq.cloud/s38zvoe/pe6k8yu)
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
 
