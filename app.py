@@ -2,11 +2,12 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"]= 'mongodb+srv://ayaanh221:missayaan221@myfirstcluster-lj4yz.mongodb.net/diary-max?retryWrites=true&w=majority'
+app.config["MONGO_URI"]= os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
