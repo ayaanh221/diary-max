@@ -3,7 +3,7 @@ One or two paragraphs providing an overview of your project.
 My project is an online cookbook where you can store recipes that you have create your self. You are able to add images methods , ingredients and many more thing. Once you have stored and saved a recipe of your choice you are able to edit and delete a recipe that you have already created, you can do all of this with easy access.
 
 ### Demo
-[demo]( https://ayaanh221.github.io/diary-max/)
+[demo]( http://diary-max.herokuapp.com/get_tasks)
 ## UX
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 [WIREFRAMES WOULD BE FOUND HERE]( https://balsamiq.cloud/s38zvoe/pe6k8yu)
