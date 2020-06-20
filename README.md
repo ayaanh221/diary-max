@@ -15,10 +15,10 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 The user's requirements are:
 
-1.As a user I want to be able to add recipes
-2.As a user I want to be able to get a confirmation that i added a recipe
-3.As a user i want to see the recipe i added
-4.As a user I want to be able to delete and edit the recipe i previously made
+1. As a user I want to be able to add recipes
+2. As a user I want to be able to get a confirmation that i added a recipe
+3. As a user i want to see the recipe i added
+4. As a user I want to be able to delete and edit the recipe i previously made
 
 # Features
 ### Existing Features
