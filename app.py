@@ -51,6 +51,13 @@ def edit_task(recipe_id):
     return render_template('edittask.html',  task=the_recipe,
                            categories=all_categories)
 
+
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    print('ff')
+    the_recipe=  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('view_recipe.html',  recipe=the_recipe,)
+
    
    
 @app.route('/update_task/<recipe_id>', methods=["POST"])

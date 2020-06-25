@@ -60,7 +60,7 @@
  
  <!--card content-->
     <div class="card-content">
-     {{recipe_name}}    <span class="card-title activator grey-text text-darken-4"><h4>{{recipe.recipe_name}}</h4><i class="material-icons right">more_vert</i></span> 
+     <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}"> <span class="card-title activator grey-text text-darken-4"><h4>{{recipe.recipe_name}}</h4><i class="material-icons right">more_vert</i></span></a> 
    
 
     </div>
