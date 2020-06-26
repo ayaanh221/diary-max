@@ -47,57 +47,35 @@
 
 <div class="col s12 m4">
   <div class="card col s12">
- <!--image-->  
  
-    
-     {% if recipe.photo_link %}
-    <div class="card-image waves-effect waves-block waves-light ">
-     <img class="activator col s12 " src="{{recipe.photo_link}} ">
-    </div>
-     {% endif %}
-   
- 
- <!--card content-->
-    <div class="card-content">
-     {{recipe_name}}    <span class="card-title activator grey-text text-darken-4"><h4>{{recipe.recipe_name}}</h4><i class="material-icons right">more_vert</i></span> 
-   
-
-    </div>
-   <!--card reveal-->
-    <div class="card-reveal"> 
-     <!--edit/ delete button-->
-    <div class="col 12">
+ <div class="col 12">
      
 <a href="{{url_for('delete_task', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small" onclick="M.toast({html: 'Recipe Deleted'})">Delete</a>
  <a href="{{url_for('edit_task', recipe_id=recipe._id)}}" class="waves-eSffect waves-light btn btn_small blue">Edit</a>
 
 
  
-   </div>
-     {{recipe._name}}  <span class="card-title grey-text text-darken-4"><h1>{{recipe.recipe_name}}</h1><i class="material-icons right">close</i></span>
+   </div><!--image-->  
+ 
+ 
     
-  
-    <!--Ingredient-->  
-      <h5>INGREDIENTS</h5>
-      <ul class="b">
-  <li>{{recipe.ingredients}}</li>
-  <li></li>
-  <li></li>
-</ul>
-<!--method-->
- <h5>HOW TO MAKE THE RECIPE.</h5>
- <p>{{recipe.method}}</p>
-  <!--due_date-->
-  <h5>WHEN WOULD YOU COOK IT?</h5>
-   <p>{{recipe.due_date}}</p>
-  <!--vegetarian-->
-  <h5>IS IT SUITABLE FOR VEGETARIAN'S?</h5>
-   <p>{{recipe.vegetarian}}</p> 
-  <!--cooking_time-->
-  <h5>HOW LONG WOULD IT TAKE YOU TO MAKE THIS RECIPE?</h5>
-   <p>{{recipe.cooking_time}}</p>
-  
+     {% if recipe.photo_link %}
+   <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" > <img class="activator col s12 " src="{{recipe.photo_link}} ">
+    
+        <div class="card-image waves-effect waves-block waves-light ">
+
+    </div></a>
+     {% endif %}
+   
+ 
+ <!--card content-->
+    <div class="card-content">
+   <span class="card-title grey-text text-darken-4"><h3>{{recipe.recipe_name}}</h3></span>
+
+
     </div>
+  
+ 
 
 
 
