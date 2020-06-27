@@ -42,10 +42,11 @@ I have tested the responsiveness of the app and made sure it works on diffrent s
 2. Ipad - 768 x 1024
 3. laptop - 1280 x 800
 
-
-Try and submit a recipe and you would get a message that says 'recipe submitted'
+### while i was testing i came across these problems
+1.  Try and submit a recipe and you would get a message that says 'recipe submitted'
 During the testing i have came acorss my delete and edit button was sending me to the wrong link however i managed to fix it buy changing the way i wrote my href.
-
+2.before i didnt have a views page so when the user wanted to view a recipe they would have clicked on a scrollsyp where they can see there recipe i have added the views page so people can get a better view of there recipe.
+3.I have noticed on my views page that the recipe pictures was very big and there was not container i fixed this by adding the whole page a container
 
 
 # Deployment

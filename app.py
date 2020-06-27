@@ -4,46 +4,37 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
 load_dotenv()
-
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
 app.config["MONGO_URI"]= os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
-
-
+# tasks
 
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
     return render_template("tasks.html", tasks=mongo.db.tasks.find())
 
-
-
-
-
-
-
+# add tasks
 @app.route('/add_task')
 def add_task():
-  
-    return render_template('addtask.html', 
+   return render_template('addtask.html', 
                            categories=mongo.db.categories.find())         
-                           
+     
+# recipes
 @app.route('/task_recipe')
 def task_recipe():
     return render_template("recipes.html", tasks=mongo.db.tasks.find())
     
-
+# add a recipe
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
      tasks = mongo.db.tasks
      tasks.insert_one(request.form.to_dict())
      return redirect(url_for('get_tasks'))
     
-
-
-
+# edit a recipe
 @app.route('/edit_task/<recipe_id>')
 def edit_task(recipe_id):
     the_recipe=  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
@@ -51,7 +42,7 @@ def edit_task(recipe_id):
     return render_template('edittask.html',  task=the_recipe,
                            categories=all_categories)
 
-
+# view a recipe
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
     print('ff')
@@ -59,7 +50,7 @@ def view_recipe(recipe_id):
     return render_template('view_recipe.html',  recipe=the_recipe,)
 
    
-   
+#update a recipe 
 @app.route('/update_task/<recipe_id>', methods=["POST"])
 def update_task(recipe_id):
     tasks = mongo.db.tasks
@@ -75,6 +66,7 @@ def update_task(recipe_id):
     })
     return redirect(url_for('get_tasks'))
 
+# delete a recipe
 @app.route('/delete_task/<recipe_id>')
 def delete_task(recipe_id):
   
