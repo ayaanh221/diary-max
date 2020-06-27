@@ -1,5 +1,4 @@
 # Ayaan's cookbook
-One or two paragraphs providing an overview of your project.
 My project is an online cookbook where you can store recipes that you have create your self. You are able to add images methods , ingredients and many more thing. Once you have stored and saved a recipe of your choice you are able to edit and delete a recipe that you have already created, you can do all of this with easy access.
 
 ### Demo
@@ -30,6 +29,7 @@ My Recipes- this would allow you to view a all the recipes submitted by the curr
 ### Features Left to Implement
 1. I would like to add  a recipe planner where you would be able to add a recipe and a day you want to cook it, when the day arrives you would get a text message reminding you.
 2. Dietary
+3. I want to fix the search bar so people can search for previously created recipes
 # Technologies Used
  I have used the following  technologies:
 HTML, CSS, JavaScript Python, front end from Materialize Full Stack Micro Framework Flask, SQL -relational database management system , pymongo
@@ -41,6 +41,7 @@ I have tested the responsiveness of the app and made sure it works on diffrent s
 1. Iphone x  - 375 x 812
 2. Ipad - 768 x 1024
 3. laptop - 1280 x 800
+I have also sent a link to my brother which has a samsung phone to view it on his phone and it was fully responsive.
 
 ### while i was testing i came across these problems
 1.  Try and submit a recipe and you would get a message that says 'recipe submitted'
