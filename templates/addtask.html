@@ -1,22 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-
-
- 
-
-        
 <!--content-->
 <section id="add-task">
-    
-
-<h3>Add Recipe</h3>
+    <h3>Add Recipe</h3>
 <div class="row">
     <form action="{{ url_for('insert_task', recipe_id=add_recipe) }}" method="POST"  class="col s12"  name="serialNumber" enctype="multipart/form-data">
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
                  
-                    
-                </div>
+              </div>
             </div>
 <!--Recipe Name-->
             <div class="input-field col s6">
@@ -53,12 +45,8 @@
                 <i class="material-icons prefix">add_a_photo</i>
               <textarea name="photo_link" id="photo_link" class="materialize-textarea" placeholder="Add  image url "> </textarea>
     <div class="file-field input-field">  
-    
-              
-      
-    </div>
- 
-            </div>
+     </div>
+     </div>
         </div>
         <!--datepicker-->
         <div class="row">
@@ -69,8 +57,7 @@
             </div>
         </div>
         
-        
-    <!--cooking_time-->
+<!--cooking_time-->
      <div class="row">
             <div class="input-field col s5">
                 <i class="material-icons prefix">alarm</i>
@@ -79,8 +66,7 @@
                 <label for="icon_telephone">How long would it take you to make this recipe?</label>
             </div>
         </div>
-     
-        <!-- Switch -->
+ <!-- Switch -->
 
   <div class="switch col s6" >
       <p>Is It Suitible For Vegetarians?</p>
