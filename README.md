@@ -1,5 +1,4 @@
 # Ayaan's cookbook
-One or two paragraphs providing an overview of your project.
 My project is an online cookbook where you can store recipes that you have create your self. You are able to add images methods , ingredients and many more thing. Once you have stored and saved a recipe of your choice you are able to edit and delete a recipe that you have already created, you can do all of this with easy access.
 
 ### Demo
